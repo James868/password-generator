@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Password Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="app">
+        <header class="app__header">
+          <h1 class="header__title">Password Generator</h1>
+        </header>
+
+        <main class="app__body">
+          <section class="settings">
+            <ul class="settings__list">
+              <li class="settings__item">
+                <label class="setting__name" for="length">Length </label>
+                <span class="length-value js-length-value">5</span>
+                <input id="length" class="setting__range js-length" type="range" min="5" max="128" value="10">
+              </li>
+
+              <li class="settings__item">
+                <label class="setting__name" for="uppercase">Uppercase</label>
+                <input id="uppercase" class="setting__toggle js-uppercase" type="checkbox" checked>
+              </li>
+
+              <li class="settings__item">
+                <label class="setting__name" for="lowercase">Lowercase</label>
+                <input id="lowercase" class="setting__toggle js-lowercase" type="checkbox">
+              </li>
+
+              <li class="settings__item">
+                <label class="setting__name" for="number">Numbers</label>
+                <input id="numbers" class="setting__toggle js-numbers" type="checkbox" checked>
+              </li>
+
+              <li class="settings__item">
+                <label class="setting__name" for="symbol">Symbols</label>
+                <input id="symbols" class="setting__toggle js-symbols" type="checkbox">
+              </li>
+            </ul>
+
+            <section class="buttons">
+              <button class="generator-button js-generator-button">Generate</button>
+              <button class="copy-button js-copy-button">Copy</button>
+            </section>
+
+            <p class="output js-output"></p>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
+
