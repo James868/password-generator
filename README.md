@@ -1,4 +1,5 @@
 <h1 align="center">Random password generator</h1>
+
 > A simple JavaScript random password generator with settings to choose characters you want to use to make up the password.
 
 ## Technologies
