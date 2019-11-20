@@ -1,0 +1,69 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  color: #333333;
+  font-size: 62.5%;
+  font-family: "Nunito", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+
+  margin: 0;
+  padding: 0;
+}
+
+input,
+textarea,
+select,
+optgroup,
+button {
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+hr {
+  width: 100%;
+  height: 2px;
+  border: none;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+ 
+  background: transparent;
+  border-top: 2px solid #eaeff3;
+}
+
+a {
+  border-bottom: 3px solid #1d96e0;
+
+  color: #333333;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+[disabled] {
+  cursor: not-allowed;
+}
+
