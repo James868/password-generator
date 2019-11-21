@@ -58,6 +58,22 @@ function generatePassword(
   output.textContent = generatedPassword.join("");
 }
 
+function copyPassword() {
+  const textarea = document.createElement("textarea");
+
+  /* Hide textarea from screen readers */
+
+  textarea.setAttribute("readonly", ""); textarea.style.position = "absolute"; textarea.style.left = "-999999px";
+
+  /*************************************/
+
+  textarea.value = output.textContent;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+}
+
 lengthSetting.addEventListener("input", () => {
   const lengthValue = lengthSetting.value;
 
@@ -79,4 +95,6 @@ generatorButton.addEventListener("click", () => {
     hasSymbols
   );
 });
+
+copyButton.addEventListener("click", () => copyPassword());
 
