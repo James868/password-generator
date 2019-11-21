@@ -63,7 +63,9 @@ function copyPassword() {
 
   /* Hide textarea from screen readers */
 
-  textarea.setAttribute("readonly", ""); textarea.style.position = "absolute"; textarea.style.left = "-999999px";
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "absolute";
+  textarea.style.left = "-999999px";
 
   /*************************************/
 
