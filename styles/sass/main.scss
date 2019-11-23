@@ -24,50 +24,49 @@ $whisper: #ededed;
   outline: none;
 }
 
-@mixin circle {
-  background: $whisper;
+@mixin thumb {  
+  width: 1.6em;
+  height: 1.6em;
+
+  -webkit-tap-highlight-color: transparent;
   border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border: 0.3em solid $whisper;
+  background: $gainsboro;
   outline: none;
-  
+
   cursor: pointer;
 }
 
-@mixin thumb {
-  @include circle;
-
-  width: 3rem;
-  height: 3rem;
-}
-
 @mixin button {
-  padding: 1rem;
+  padding: 0.5em;
 
   border-radius: 5px;
   background: $summer-sky;
 
   color: white;
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
   letter-spacing: 2px;
+
+  cursor: pointer;
 }
 
 /**********/
 
 
 .container {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 .app__header,
 .settings__list,
 .buttons {
-  margin-bottom: 4rem;
+  margin-bottom: 1.5em;
 }
 
 .app__header,
 .app__body {
-  padding: 2rem;
+  padding: 1em;
 }
 
 .app__header {
@@ -76,13 +75,13 @@ $whisper: #ededed;
 
 .header__title {
   color: white;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   letter-spacing: 2px;
   text-align: center;
 }
 
 .app__body {
-  max-width: 650px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -91,7 +90,12 @@ $whisper: #ededed;
   align-items: center;
   justify-content: space-between;
   
-  margin-bottom: 2rem;
+  margin-bottom: 1em;
+}
+
+.setting__name,
+.length-value {
+  margin-right: 0.5em;
 }
 
 .setting__range {
@@ -99,7 +103,7 @@ $whisper: #ededed;
   @include track;
 
   width: 75%;
-  height: 1rem;
+  height: 0.5em;
 
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -124,7 +128,7 @@ $whisper: #ededed;
     @include button;
 
     width: 80%;
-    margin-right: 1rem;
+    margin-right: 0.5em;
   }
 
   .copy-button {
@@ -140,44 +144,46 @@ $whisper: #ededed;
 
 .setting__toggle {
   @include prefix(appearance, none);
-  @include track;
+  @include thumb;
 
   position: relative;
 
-  width: 3.5rem;
-  height: 1.5rem;
-
-  transition: 0.2s; 
-  
+  transition: 0.2s;
+ 
   &:checked {
-    background: $sail;
-  }
-
-  &:before {
-    @include circle; 
-
-    content: "";
-
-    position: absolute;
-    top: -4px;
-    left: 0;
-
-    width: 2.3rem;
-    height: 2.3rem;
-
-    transition: 0.2s;
-  }
-
-  &:checked:before {
-    left: 15px;
-
+    border: 0.3em solid $sail;
     background: $summer-sky;
   }
+
 }
 
 .output {
   -ms-word-break: break-all; 
   word-break: break-all; 
   text-align: center;
+}
+
+@media screen and (min-width: 480px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 100%;
+  }
 }
 
