@@ -38,7 +38,7 @@ $whisper: #ededed;
 }
 
 @mixin button {
-  padding: 0.5em;
+  padding: 0.6em;
 
   border-radius: 5px;
   background: $summer-sky;
@@ -102,7 +102,7 @@ $whisper: #ededed;
   @include prefix(appearance, none);
   @include track;
 
-  width: 75%;
+  width: 85%;
   height: 0.5em;
 
   &::-webkit-slider-thumb {
@@ -127,7 +127,7 @@ $whisper: #ededed;
   .generator-button {
     @include button;
 
-    width: 80%;
+    width: 85%;
     margin-right: 0.5em;
   }
 
@@ -138,7 +138,7 @@ $whisper: #ededed;
     align-items: center;
     justify-content: center;
 
-    width: 20%;  
+    width: 15%;  
   }
 }
 
@@ -148,7 +148,7 @@ $whisper: #ededed;
 
   position: relative;
 
-  transition: 0.2s;
+  transition: 0.2s ease-in;
  
   &:checked {
     border: 0.3em solid $sail;
