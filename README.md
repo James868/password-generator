@@ -1,8 +1,8 @@
-<h1 align="center">Random password generator</h1>
+# Password Generator
 
-> A simple JavaScript random password generator with settings to choose characters you want to use to make up the password.
+> A lightweight JavaScript password generator with settings to choose characters to include in the password.
 
-![Random Password Generator Demo](demo/demo.gif)
+![Password Generator Demo](demo/demo.gif)
 
 ## Technologies
 * HTML
