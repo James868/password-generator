@@ -8,6 +8,15 @@ const generatorButton = document.querySelector(".js-generator-button");
 const copyButton = document.querySelector(".js-copy-button");
 const output = document.querySelector(".js-output");
 
+function cryptoRandom() {
+  const crypto = window.crypto || window.msCrypto;
+  const typedArray = new Uint32Array(1);
+  const maxNumber = Math.pow(2, 32);
+  const randomFloat = crypto.getRandomValues(typedArray)[0] / maxNumber;
+
+  return randomFloat;
+}
+
 function generatePassword(
   lengthValue,
   hasLowercase,
@@ -23,6 +32,7 @@ function generatePassword(
   }
   const unicodeIndexes = [];
   const generatedPassword = [];
+
 
   if (hasLowercase) {
     for (let i = UNICODE_TABLE.lowercase[0]; i <= UNICODE_TABLE.lowercase[1]; i++) {
@@ -49,7 +59,7 @@ function generatePassword(
   }
 
   for (let i = 1; i <= lengthValue; i++) {
-    const randomIndex = Math.floor(Math.random() * unicodeIndexes.length);
+    const randomIndex = Math.floor(cryptoRandom() * unicodeIndexes.length);
     const randomCharacter = String.fromCharCode(unicodeIndexes[randomIndex]);
 
     generatedPassword.push(randomCharacter);
