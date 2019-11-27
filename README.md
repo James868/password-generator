@@ -1,6 +1,6 @@
 # Password Generator
 
-> A lightweight JavaScript password generator with settings to choose characters to include in the password.
+> A cryptographically secure password generator that generate passwords of any length from selectable list of character sets. 
 
 ![Password Generator Demo](demo/demo.gif)
 
