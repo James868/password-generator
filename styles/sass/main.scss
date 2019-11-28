@@ -18,29 +18,9 @@ $whisper: #ededed;
   #{$property}: $val;
 }
 
-@mixin track {
-  background: $gainsboro;
-  border-radius: 20px;
-  outline: none;
-}
-
-@mixin thumb {  
-  width: 1.6em;
-  height: 1.6em;
-
-  -webkit-tap-highlight-color: transparent;
-  border-radius: 50%;
-  border: 0.3em solid $whisper;
-  background: $gainsboro;
-  outline: none;
-
-  cursor: pointer;
-}
-
 @mixin button {
   padding: 0.6em;
 
-  border-radius: 5px;
   background: $summer-sky;
 
   color: white;
@@ -104,6 +84,7 @@ $whisper: #ededed;
   border-radius: 5px;
   padding: 0 0.2em;
   width: 3em;
+  cursor: pointer;
 }
 
 .setting__toggle {
@@ -142,6 +123,8 @@ $whisper: #ededed;
 
   width: 100%;
   margin-bottom: 1em;
+  
+  border-radius: 5px;
 }
 
 .output-container {
@@ -166,9 +149,6 @@ $whisper: #ededed;
   @include button;
   
   margin-left: auto;
-  padding: 0.6em;
-  
-  border-radius: 0;
 }
 
 @media screen and (min-width: 480px) {
