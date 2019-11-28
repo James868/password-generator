@@ -123,17 +123,33 @@ $whisper: #ededed;
 
 .setting__toggle {
   @include prefix(appearance, none);
-  @include thumb;
 
-  position: relative;
+  width: 1.6em;
+  height: 1.6em;
+  background: $gainsboro;
+  border-radius: 5px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  transition: 0.2s ease-in;
- 
+  transition: all 0.2s ease-in-out;
+
+  &:after {
+
+    content: "\2713";
+    color: white;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+  }
+
   &:checked {
-    border: 0.3em solid $sail;
     background: $summer-sky;
   }
 
+  &:checked:after {
+    transform: scale(1);
+  }
 }
 
 .generator-button {
