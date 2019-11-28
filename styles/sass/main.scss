@@ -99,26 +99,11 @@ $whisper: #ededed;
 }
 
 .setting__range {
-  @include prefix(appearance, none);
-  @include track;
-
-  width: 85%;
-  height: 0.5em;
-
-  &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    @include thumb;
-  }
-
-  &::-moz-range-thumb {
-    -moz-appearance: none;
-    @include thumb;
-  }
-
-  &::-ms-thumb {
-    -ms-appearance: none;
-    @include thumb;
-  }
+  outline: none;
+  border: 2px solid $summer-sky;
+  border-radius: 5px;
+  padding: 0 0.2em;
+  width: 3em;
 }
 
 .setting__toggle {
