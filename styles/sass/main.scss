@@ -59,17 +59,17 @@ $whisper: #ededed;
 }
 
 .app__header,
-.settings__list,
-.buttons {
+.settings__list {
   margin-bottom: 1.5em;
 }
 
-.app__header,
 .app__body {
   padding: 1em;
 }
 
 .app__header {
+  padding: 0.7em;
+
   background: $summer-sky;
 }
 
@@ -121,27 +121,6 @@ $whisper: #ededed;
   }
 }
 
-.buttons {
-  display: flex;
-  
-  .generator-button {
-    @include button;
-
-    width: 85%;
-    margin-right: 0.5em;
-  }
-
-  .copy-button {
-    @include button;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 15%;  
-  }
-}
-
 .setting__toggle {
   @include prefix(appearance, none);
   @include thumb;
@@ -157,10 +136,38 @@ $whisper: #ededed;
 
 }
 
+.generator-button {
+  @include button;
+
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.output-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+  border-radius: 5px;
+  border: 2px solid $summer-sky;
+}
+
 .output {
-  -ms-word-break: break-all; 
-  word-break: break-all; 
-  text-align: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  
+  margin-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.copy-button {
+  @include button;
+  
+  margin-left: auto;
+  padding: 0.6em;
+  
+  border-radius: 0;
 }
 
 @media screen and (min-width: 480px) {

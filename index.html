@@ -18,42 +18,44 @@
         </header>
 
         <main class="app__body">
-          <section class="settings">
-            <ul class="settings__list">
-              <li class="settings__item">
-                <label class="setting__name" for="length">Length </label>
-                <span class="length-value js-length-value">5</span>
-                <input id="length" class="setting__range js-length" type="range" min="5" max="128" value="5">
-              </li>
+          <form class="form">
+            <section class="settings">
+              <ul class="settings__list">
+                <li class="settings__item">
+                  <label class="setting__name" for="length">Length </label>
+                  <span class="length-value js-length-value">5</span>
+                  <input id="length" class="setting__range js-length" type="range" min="5" max="128" value="5">
+                </li>
 
-              <li class="settings__item">
-                <label class="setting__name" for="uppercase">Uppercase</label>
-                <input id="uppercase" class="setting__toggle js-uppercase" type="checkbox" checked>
-              </li>
+                <li class="settings__item">
+                  <label class="setting__name" for="uppercase">Uppercase</label>
+                  <input id="uppercase" class="setting__toggle js-uppercase" type="checkbox" checked>
+                </li>
 
-              <li class="settings__item">
-                <label class="setting__name" for="lowercase">Lowercase</label>
-                <input id="lowercase" class="setting__toggle js-lowercase" type="checkbox">
-              </li>
+                <li class="settings__item">
+                  <label class="setting__name" for="lowercase">Lowercase</label>
+                  <input id="lowercase" class="setting__toggle js-lowercase" type="checkbox">
+                </li>
 
-              <li class="settings__item">
-                <label class="setting__name" for="numbers">Numbers</label>
-                <input id="numbers" class="setting__toggle js-numbers" type="checkbox" checked>
-              </li>
+                <li class="settings__item">
+                  <label class="setting__name" for="numbers">Numbers</label>
+                  <input id="numbers" class="setting__toggle js-numbers" type="checkbox" checked>
+                </li>
 
-              <li class="settings__item">
-                <label class="setting__name" for="symbols">Symbols</label>
-                <input id="symbols" class="setting__toggle js-symbols" type="checkbox">
-              </li>
-            </ul>
-
-            <section class="buttons">
-              <button class="generator-button js-generator-button">Generate</button>
-              <button class="copy-button js-copy-button icon-copy"></button>
+                <li class="settings__item">
+                  <label class="setting__name" for="symbols">Symbols</label>
+                  <input id="symbols" class="setting__toggle js-symbols" type="checkbox">
+                </li>
+              </ul>
             </section>
 
-            <p class="output js-output"></p>
-          </section>
+            <button class="generator-button js-generator-button">Generate</button>
+
+            <section class="output-container">
+              <output class="output js-output"></output>
+              <button class="copy-button js-copy-button icon-copy"></button>
+            </section>
+          </form>
         </main>
       </div>
     </div>

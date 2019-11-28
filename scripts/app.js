@@ -1,3 +1,4 @@
+const form = document.querySelector(".form");
 const lengthSetting = document.querySelector(".js-length");
 const lengthValueElem = document.querySelector(".js-length-value");
 const lowercaseSetting = document.querySelector(".js-lowercase");
@@ -86,6 +87,8 @@ function copyPassword() {
   document.body.removeChild(textarea);
 }
 
+form.addEventListener("submit", event => event.preventDefault());
+
 lengthSetting.addEventListener("input", () => {
   const lengthValue = lengthSetting.value;
 
@@ -109,4 +112,5 @@ generatorButton.addEventListener("click", () => {
 });
 
 copyButton.addEventListener("click", () => copyPassword());
+
 
