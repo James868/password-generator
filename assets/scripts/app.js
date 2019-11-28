@@ -1,6 +1,5 @@
 const form = document.querySelector(".form");
 const lengthSetting = document.querySelector(".js-length");
-const lengthValueElem = document.querySelector(".js-length-value");
 const lowercaseSetting = document.querySelector(".js-lowercase");
 const uppercaseSetting = document.querySelector(".js-uppercase");
 const numbersSetting = document.querySelector(".js-numbers");
@@ -89,12 +88,6 @@ function copyPassword() {
 
 form.addEventListener("submit", event => event.preventDefault());
 
-lengthSetting.addEventListener("input", () => {
-  const lengthValue = lengthSetting.value;
-
-  lengthValueElem.textContent = lengthValue;
-});
-
 generatorButton.addEventListener("click", () => {
   const lengthValue = +lengthSetting.value;
   const hasLowercase = lowercaseSetting.checked;
@@ -112,5 +105,4 @@ generatorButton.addEventListener("click", () => {
 });
 
 copyButton.addEventListener("click", () => copyPassword());
-
 
