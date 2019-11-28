@@ -1,0 +1,130 @@
+@mixin prefix($property, $val) { 
+  -webkit-#{$property}: $val;
+  -moz-#{$property}: $val;
+  -ms-#{$property}: $val;
+  -o-#{$property}: $val;
+  #{$property}: $val;
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+}
+
+@mixin blue-border {
+  border: 2px solid var(--summer-sky);
+}
+
+@mixin bolded {
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+@mixin rounded {
+  border-radius: 5px;
+}
+
+@mixin transition {
+  transition: all 0.2s ease-in-out;
+}
+
+.header__title {
+  @include bolded;
+
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.settings__list {
+  margin-bottom: 1.5em;
+}
+
+.settings__item {
+  @include flex;
+
+  justify-content: space-between;
+  
+  margin-bottom: 1em;
+}
+
+.setting__range {
+  @include blue-border;
+  @include rounded;
+
+  width: 3em;
+  padding: 0 0.2em;
+}
+
+.setting__toggle {
+  @include prefix(appearance, none);
+  @include flex;
+  @include rounded;
+  @include transition;
+
+  $size: 1.6em;
+
+  justify-content: center;
+  
+  width: $size;
+  height: $size;
+  
+  background: var(--gainsboro);
+
+  &:after {
+    @include transition;
+
+    content: "\2713";
+    color: white;
+    transform: scale(0);
+  }
+
+  &:checked {
+    background: var(--summer-sky);
+  }
+
+  &:checked:after {
+    transform: scale(1);
+  }
+}
+
+.button {
+  @include bolded;
+
+  padding: 0.6em;
+
+  background: var(--summer-sky);
+
+  font-size: 1.8rem;
+
+  cursor: pointer;
+}
+
+.generator-button {
+  @include rounded;
+
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.output-container {
+  @include blue-border;
+  @include flex;
+  @include rounded;
+
+  flex-direction: row;
+
+    .output {
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+  
+      margin-right: 0.5em;
+      padding-left: 0.5em;
+    }
+
+    .copy-button { 
+      margin-left: auto;
+    }
+}
+
