@@ -86,7 +86,15 @@ function copyPassword() {
   document.body.removeChild(textarea);
 }
 
+function limitMaxLength() {
+  if (+lengthSetting.value > 128) {
+    lengthSetting.value = "128";
+  }
+}
+
 form.addEventListener("submit", event => event.preventDefault());
+
+lengthSetting.addEventListener("keyup", () => limitMaxLength());
 
 generatorButton.addEventListener("click", () => {
   const lengthValue = +lengthSetting.value;
