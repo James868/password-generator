@@ -2,7 +2,7 @@
   "name": "password-generator",
   "version": "1.1.0",
   "description": "> A cryptographically secure password generator that generate passwords of any length from selectable list of character sets.",
-  "main": "index.js",
+  "main": "src/assets/scripts/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/James868/password-generator/issues"
   },
-  "homepage": "https://github.com/James868/password-generator#readme"
+  "homepage": "https://github.com/James868/password-generator#readme",
+  "devDependencies": {
+    "sass": "^1.23.7"
+  }
 }
