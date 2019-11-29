@@ -3,8 +3,16 @@
   "version": "1.1.0",
   "description": "> A cryptographically secure password generator that generate passwords of any length from selectable list of character sets.",
   "main": "src/assets/scripts/index.js",
+  "config": {
+    "out": "build"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass --style compressed src/assets/styles/sass/main.scss $npm_package_config_out/assets/styles/style.css",
+    "terser": "mkdir -p $npm_package_config_out/assets/scripts && terser src/assets/scripts/index.js -m -c -o $npm_package_config_out/assets/scripts/index.js",
+    "build:html": "html-minifier --input-dir src --output-dir $npm_package_config_out --collapse-whitespace --remove-comments --remove-optional-tags --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true --file-ext html",
+    "build:css": "run-s sass",
+    "build:js": "run-s terser",
+    "build": "mkdir -p $npm_package_config_out/assets && cp -r src/assets/icomoon $npm_package_config_out/assets && run-p build:*"
   },
   "repository": {
     "type": "git",
@@ -17,6 +25,9 @@
   },
   "homepage": "https://github.com/James868/password-generator#readme",
   "devDependencies": {
-    "sass": "^1.23.7"
+    "html-minifier": "^4.0.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.23.7",
+    "terser": "^4.4.0"
   }
 }
