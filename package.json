@@ -7,12 +7,15 @@
     "out": "build"
   },
   "scripts": {
+    "live": "live-server src --host=127.0.0.1 --port=8080",
     "sass": "sass --style compressed src/assets/styles/sass/main.scss $npm_package_config_out/assets/styles/style.css",
     "terser": "mkdir -p $npm_package_config_out/assets/scripts && terser src/assets/scripts/index.js -m -c -o $npm_package_config_out/assets/scripts/index.js",
     "build:html": "html-minifier --input-dir src --output-dir $npm_package_config_out --collapse-whitespace --remove-comments --remove-optional-tags --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true --file-ext html",
     "build:css": "run-s sass",
     "build:js": "run-s terser",
-    "build": "mkdir -p $npm_package_config_out/assets && cp -r src/assets/icomoon $npm_package_config_out/assets && run-p build:*"
+    "build": "mkdir -p $npm_package_config_out/assets && cp -r src/assets/icomoon $npm_package_config_out/assets && run-p build:*",
+    "watch:css": "onchange 'src/assets/styles/sass' -- run-s sass --style compressed src/assets/styles/sass/main.scss src/assets/styles/style.css",
+    "dev": "run-p watch:css live"
   },
   "repository": {
     "type": "git",
@@ -27,6 +30,7 @@
   "devDependencies": {
     "html-minifier": "^4.0.0",
     "npm-run-all": "^4.1.5",
+    "onchange": "^6.1.0",
     "sass": "^1.23.7",
     "terser": "^4.4.0"
   }

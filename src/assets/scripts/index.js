@@ -29,32 +29,25 @@ function generatePassword(
     uppercase: [65, 90],
     numbers: [48, 57],
     symbols: [33, 47]
-  }
+  };
+  const settings = [
+    { name: "lowercase", state: hasLowercase },
+    { name: "uppercase", state: hasUppercase },
+    { name: "numbers", state: hasNumbers },
+    { name: "symbols", state: hasSymbols }
+  ];
   const unicodeIndexes = [];
   const generatedPassword = [];
 
+  for (const setting of settings) {
+    const isSettingEnabled = setting.state;
+    const minUnicodeIndex = UNICODE_TABLE[setting.name][0];
+    const maxUnicodeIndex = UNICODE_TABLE[setting.name][1];
 
-  if (hasLowercase) {
-    for (let i = UNICODE_TABLE.lowercase[0]; i <= UNICODE_TABLE.lowercase[1]; i++) {
-      unicodeIndexes.push(i);
-    }
-  }
-
-  if (hasUppercase) {
-    for (let i = UNICODE_TABLE.uppercase[0]; i <= UNICODE_TABLE.uppercase[1]; i++) {
-      unicodeIndexes.push(i);
-    }
-  }
-
-  if (hasNumbers) {
-    for (let i = UNICODE_TABLE.numbers[0]; i <= UNICODE_TABLE.numbers[1]; i++) {
-      unicodeIndexes.push(i);
-    }
-  }
-
-  if (hasSymbols) {
-    for (let i = UNICODE_TABLE.symbols[0]; i <= UNICODE_TABLE.symbols[1]; i++) {
-      unicodeIndexes.push(i);
+    if (isSettingEnabled) {
+      for (let i = minUnicodeIndex; i <= maxUnicodeIndex; i++) {
+        unicodeIndexes.push(i);
+      }
     }
   }
 
