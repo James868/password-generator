@@ -1,6 +1,6 @@
 # Password Generator
 
-> A cryptographically secure password generator that generate passwords of any length from selectable list of character sets. 
+> A cryptographically secure password generator that generate passwords with length ranging from 5 to 128 characters from selectable list of character sets. 
 
 ![Password Generator Demo](demo/demo.gif)
 
