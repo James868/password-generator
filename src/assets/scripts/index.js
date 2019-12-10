@@ -96,6 +96,8 @@ generatorButton.addEventListener("click", () => {
   const hasNumbers = numbersSetting.checked;
   const hasSymbols = symbolsSetting.checked;
 
+  if (lengthValue < 5) return;
+
   generatePassword(
     lengthValue,
     hasLowercase,
